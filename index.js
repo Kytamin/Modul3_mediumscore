@@ -42,16 +42,15 @@ let student=[
 
 ];
 
-let maleStudent=student.filter((element)=>element.gender==="male")
-let femaleStudent=student.filter((element)=>element.gender==="female")
+function arrange(Student) {
+    let maleStudent=Student.filter((element)=>element.gender==="male")
+    let femaleStudent=Student.filter((element)=>element.gender==="female")
+    let totalMale=maleStudent.reduce((totalPoint,male)=>(totalPoint+male.poin),0)
+    let totalFemale=femaleStudent.reduce((totalPoint,female)=>(totalPoint+female.poin),0)
+    let mediumMale=totalMale/maleStudent.length
+    let mediumFemale=totalFemale/femaleStudent.length
+    console.log(`điểm trung bình học sinh nam:${mediumMale} điểm`)
+    console.log(`điểm trung bình học sinh nữ:${mediumFemale} điểm`)
+}
+arrange(student)
 
-let totalMale=maleStudent.reduce((totalPoint,male)=>(totalPoint+male.poin),0)
-let totalFemale=femaleStudent.reduce((totalPoint,female)=>(totalPoint+female.poin),0)
-let mediumMale=totalMale/maleStudent.length
-let mediumFemale=totalFemale/femaleStudent.length
-
-
-console.log(maleStudent)
-console.log(femaleStudent)
-console.log(`điểm trung bình học sinh nam:${mediumMale} điểm`)
-console.log(`điểm trung bình học sinh nữ:${mediumFemale} điểm`)
